@@ -4,6 +4,21 @@ const SUPABASE_URL = 'https://tspjkvhzzggrysicdein.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzcGprdmh6emdncnlzaWNkZWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIzOTg2MzUsImV4cCI6MjA1Nzk3NDYzNX0.GozCQeyEdUVJwPVikH6tpXHAUQCPl-V50-MF9cIUCCY';
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// Check login status on page load
+async function checkUserStatus() {
+    const { data: { user } } = await supabaseClient.auth.getUser();
+    
+    if (user) {
+        document.getElementById("signupBtn").style.display = "none";
+        document.getElementById("loginBtn").style.display = "none";
+        document.getElementById("logoutBtn").style.display = "block";
+    } else {
+        document.getElementById("signupBtn").style.display = "block";
+        document.getElementById("loginBtn").style.display = "block";
+        document.getElementById("logoutBtn").style.display = "none";
+    }
+}
+
 // Function to Sign Up
 async function signUp(event) {
     event.preventDefault();
@@ -22,7 +37,8 @@ async function signUp(event) {
         alert('Signup Error: ' + error.message);
     } else {
         alert('Signup successful! Please check your email for verification.');
-        closeModal('signupModal'); // Close the pop-up
+        closeModal('signupModal');
+        checkUserStatus(); // Update UI
     }
 }
 
@@ -41,8 +57,9 @@ async function logIn(event) {
     if (error) {
         alert('Login Error: ' + error.message);
     } else {
-        alert('Login successful! Redirecting...');
-        closeModal('loginModal'); // Close the pop-up
+        alert('Login successful!');
+        closeModal('loginModal');
+        checkUserStatus(); // Update UI
     }
 }
 
@@ -53,10 +70,9 @@ async function logOut() {
         alert('Logout Error: ' + error.message);
     } else {
         alert('Logged out successfully!');
+        checkUserStatus(); // Update UI
     }
 }
 
-// Function to Close Modal Pop-ups
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-}
+// Run the check on page load
+document.addEventListener("DOMContentLoaded", checkUserStatus);
