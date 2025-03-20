@@ -15,18 +15,20 @@ console.log("Supabase initialized:", supabaseClient);
 // Function to Check Login Status on Page Load
 async function checkUserStatus() {
     const { data: { user } } = await supabaseClient.auth.getUser();
-    
-    // Check if the buttons exist before accessing them
+    console.log("User status:", user);
+
     const signupBtn = document.getElementById("signupBtn");
     const loginBtn = document.getElementById("loginBtn");
     const logoutBtn = document.getElementById("logoutBtn");
 
     if (signupBtn && loginBtn && logoutBtn) {
         if (user) {
+            console.log("User is logged in. Showing logout button.");
             signupBtn.style.display = "none";
             loginBtn.style.display = "none";
             logoutBtn.style.display = "block";
         } else {
+            console.log("User is not logged in. Hiding logout button.");
             signupBtn.style.display = "block";
             loginBtn.style.display = "block";
             logoutBtn.style.display = "none";
@@ -35,8 +37,6 @@ async function checkUserStatus() {
         console.warn("One or more buttons (signupBtn, loginBtn, logoutBtn) are missing in index.html");
     }
 }
-
-
 // Function to Sign Up
 async function signUp(event) {
     event.preventDefault();
