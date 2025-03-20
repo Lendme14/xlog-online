@@ -3,8 +3,8 @@ const signInButton = document.getElementById('signIn');
 const container = document.querySelector('.container');
 
 // Supabase initialization
-const supabaseUrl = 'https://your-supabase-url.supabase.co';
-const supabaseKey = 'your-anon-key';
+const supabaseUrl = 'https://tspjkvhzzggrysicdein.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzcGprdmh6emdncnlzaWNkZWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIzOTg2MzUsImV4cCI6MjA1Nzk3NDYzNX0.GozCQeyEdUVJwPVikH6tpXHAUQCPl-V50-MF9cIUCCY';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 signUpButton.addEventListener('click', () => {
