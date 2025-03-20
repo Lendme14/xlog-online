@@ -1,3 +1,5 @@
+console.log("auth.js is loaded successfully!");
+
 // Initialize Supabase
 const { createClient } = supabase;
 const SUPABASE_URL = 'https://tspjkvhzzggrysicdein.supabase.co';
