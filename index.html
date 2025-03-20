@@ -68,8 +68,22 @@ https://templatemo.com/tm-570-chain-app-dev
               <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
               <li class="scroll-to-section"><a href="page/tool.html">tools</a></li>
               <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Register </a></div></li> 
-              <button onclick="document.getElementById('signupModal').style.display='block'">Sign Up</button>
-<button onclick="document.getElementById('loginModal').style.display='block'">Login</button>
+              <header class="header-area header-sticky wow slideInDown">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <ul class="nav">
+                        <li id="signupBtn"><button onclick="document.getElementById('signupModal').style.display='block'">Sign Up</button></li>
+                        <li id="loginBtn"><button onclick="document.getElementById('loginModal').style.display='block'">Login</button></li>
+                        <li id="logoutBtn" style="display: none;"><button onclick="logOut()">Logout</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
 
             </ul>        
             <a class='menu-trigger'>
