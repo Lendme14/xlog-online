@@ -16,16 +16,26 @@ console.log("Supabase initialized:", supabaseClient);
 async function checkUserStatus() {
     const { data: { user } } = await supabaseClient.auth.getUser();
     
-    if (user) {
-        document.getElementById("signupBtn").style.display = "none";
-        document.getElementById("loginBtn").style.display = "none";
-        document.getElementById("logoutBtn").style.display = "block";
+    // Check if the buttons exist before accessing them
+    const signupBtn = document.getElementById("signupBtn");
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (signupBtn && loginBtn && logoutBtn) {
+        if (user) {
+            signupBtn.style.display = "none";
+            loginBtn.style.display = "none";
+            logoutBtn.style.display = "block";
+        } else {
+            signupBtn.style.display = "block";
+            loginBtn.style.display = "block";
+            logoutBtn.style.display = "none";
+        }
     } else {
-        document.getElementById("signupBtn").style.display = "block";
-        document.getElementById("loginBtn").style.display = "block";
-        document.getElementById("logoutBtn").style.display = "none";
+        console.warn("One or more buttons (signupBtn, loginBtn, logoutBtn) are missing in index.html");
     }
 }
+
 
 // Function to Sign Up
 async function signUp(event) {
