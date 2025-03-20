@@ -682,7 +682,15 @@ https://templatemo.com/tm-570-chain-app-dev
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
-  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        import('./assets/js/auth.js').then(module => {
+            window.toggleForm = module.toggleForm;
+        }).catch(error => {
+            console.error("Error loading auth.js:", error);
+        });
+    });
+</script>
 <script type="module" src="assets/js/auth.js"></script>
 </body>
 </html>
