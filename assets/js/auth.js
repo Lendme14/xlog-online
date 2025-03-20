@@ -141,5 +141,6 @@ function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
 }
 
+
 // Run the check on page load
 document.addEventListener("DOMContentLoaded", checkUserStatus);
