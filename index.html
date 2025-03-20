@@ -634,46 +634,6 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </footer>
 
-<!-- Authentication Modal -->
-<div id="authModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('authModal')">&times;</span>
-        <h2 id="modalTitle">Login</h2>
-        <!-- Social Login Buttons -->
-        <div class="social-login">
-            <button class="btn google-btn" onclick="signInWithProvider('google')">
-                <i class="fab fa-google"></i> Sign Up with Google
-            </button>
-            <button class="btn facebook-btn" onclick="signInWithProvider('facebook')">
-                <i class="fab fa-facebook"></i> Sign Up with Facebook
-            </button>
-        </div>
-
-        <hr> <!-- Divider -->
-
-        <!-- Login Form -->
-        <form id="loginForm" onsubmit="logIn(event)">
-            <input type="email" id="login-email" placeholder="Email" required>
-            <input type="password" id="login-password" placeholder="Password" required>
-            <button type="submit" class="btn login-btn">Login</button>
-            <p>Don't have an account? <a href="signupForm" onclick="toggleForm('signup')">Sign Up</a></p>
-        </form>
-
-        <!-- Sign Up Form (Initially Hidden) -->
-        <!-- Sign Up Form -->
-<form id="signupForm" onsubmit="signUp(event)" style="display: none;">
-    <input type="text" id="signup-fullname" placeholder="Full Name" required>
-    <input type="email" id="signup-email" placeholder="Email" required>
-    <input type="password" id="signup-password" placeholder="Password" required>
-    <button type="submit" class="btn signup-btn">Sign Up</button>
-    <p>Already have an account? <a href="loginForm" onclick="toggleForm('login')">Login</a></p>
-</form>
-    </div>
-</div>
-
-<!-- Buttons to Open the Modal -->
-<button onclick="openAuthModal('login')" class="btn login-btn">Login</button>
-<button onclick="openAuthModal('signup')" class="btn signup-btn">Sign Up</button>
 
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -683,15 +643,6 @@ https://templatemo.com/tm-570-chain-app-dev
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        import('./assets/js/auth.js').then(module => {
-            window.toggleForm = module.toggleForm;
-        }).catch(error => {
-            console.error("Error loading auth.js:", error);
-        });
-    });
-</script>
-<script type="module" src="assets/js/auth.js"></script>
+ 
 </body>
 </html>
