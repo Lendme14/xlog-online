@@ -138,7 +138,12 @@ function toggleForm(type) {
 
 // Function to Close Modal
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+    } else {
+        console.error(`Modal with ID "${modalId}" not found`);
+    }
 }
 
 
