@@ -37,6 +37,7 @@ async function checkUserStatus() {
         console.warn("One or more buttons (signupBtn, loginBtn, logoutBtn) are missing in index.html");
     }
 }
+
 // Function to Sign Up
 async function signUp(event) {
     event.preventDefault();
@@ -124,15 +125,19 @@ function openAuthModal(type) {
 }
 
 // Function to Switch Between Login & Signup Forms
-function toggleForm(type) {
-    if (type === 'signup') {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('signupForm').style.display = 'block';
-        document.getElementById('modalTitle').innerText = 'Sign Up';
+function toggleForm(formType) {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const modalTitle = document.getElementById('modalTitle');
+
+    if (formType === 'signup') {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        modalTitle.textContent = 'Sign Up';
     } else {
-        document.getElementById('signupForm').style.display = 'none';
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('modalTitle').innerText = 'Login';
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        modalTitle.textContent = 'Login';
     }
 }
 
@@ -145,7 +150,6 @@ function closeModal(modalId) {
         console.error(`Modal with ID "${modalId}" not found`);
     }
 }
-
 
 // Run the check on page load
 document.addEventListener("DOMContentLoaded", checkUserStatus);
