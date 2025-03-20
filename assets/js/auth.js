@@ -49,19 +49,23 @@ async function logIn(event) {
     const email = document.querySelector('#login-email').value;
     const password = document.querySelector('#login-password').value;
 
-    const { data, error } = await supabaseClient.auth.signInWithPassword({
+    // Check if the user exists before logging in
+    const { data: userExists, error: checkError } = await supabaseClient.auth.signInWithPassword({
         email: email,
         password: password
     });
 
-    if (error) {
-        alert('Login Error: ' + error.message);
+    if (checkError) {
+        alert('Account not found! Please sign up first.');
+        closeModal('loginModal');
+        document.getElementById('signupModal').style.display = 'block'; // Open Sign-Up Modal
     } else {
         alert('Login successful!');
         closeModal('loginModal');
         checkUserStatus(); // Update UI
     }
 }
+
 
 // Function to Log Out
 async function logOut() {
