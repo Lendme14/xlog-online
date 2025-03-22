@@ -1,7 +1,7 @@
 // Initialize Supabase
 const supabase = supabase.createClient(
-    "https://your-project-id.supabase.co",
-    "your-anon-key"
+    "https://tspjkvhzzggrysicdein.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzcGprdmh6emdncnlzaWNkZWluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIzOTg2MzUsImV4cCI6MjA1Nzk3NDYzNX0.GozCQeyEdUVJwPVikH6tpXHAUQCPl-V50-MF9cIUCCY"
 );
 
 // Function to load user profile
