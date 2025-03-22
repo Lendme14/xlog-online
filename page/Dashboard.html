@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="username-display"></span></h2>
+        <p>Email: <span id="email-display"></span></p>
+        <img id="profile-pic" class="profile-pic" src="" alt="Profile Picture">
+        
+        <h3>Update Profile</h3>
+        <form id="update-form">
+            <input type="text" id="new-username" placeholder="New Username">
+            <input type="file" id="new-profile-pic" accept="image/*">
+            <button type="submit">Update</button>
+        </form>
 
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
