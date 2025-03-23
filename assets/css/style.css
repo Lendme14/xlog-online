@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-/* login Form Container */
+/* Login Form Container */
 .login-container {
     width: 300px;
     margin: 100px auto;
@@ -21,7 +21,7 @@ body {
     text-align: center;
 }
 
-input {
+.login-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -29,7 +29,7 @@ input {
     border-radius: 5px;
 }
 
-button {
+.login-container button {
     width: 100%;
     padding: 10px;
     background: #007bff;
@@ -39,7 +39,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.login-container button:hover {
     background: #0056b3;
 }
 
@@ -64,11 +64,11 @@ footer {
     text-align: center;
 }
 
-/* Input Fields */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"] {
+/* Input Fields for Signup */
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container input[type="file"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -77,7 +77,7 @@ input[type="file"] {
 }
 
 /* Signup Button */
-button {
+.signup-container button {
     background-color: #28a745;
     color: white;
     border: none;
@@ -86,6 +86,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
 /* Override Styles to ensure visibility of the sign-up form */
 #signup-form {
     display: block !important;
