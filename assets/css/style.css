@@ -42,4 +42,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-
+/* Override Styles to ensure visibility of the sign-up form */
+#signup-form {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    z-index: 1000 !important;
+}
