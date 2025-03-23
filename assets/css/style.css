@@ -10,6 +10,50 @@ body {
     height: 100vh;
 }
 
+/* login Form Container */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 /* Signup Form Container */
 .signup-container {
     background-color: white;
